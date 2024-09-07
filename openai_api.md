@@ -1,8 +1,8 @@
 # API de OpenAI
 
-## Scrip Elemental
+## Script Elemental
 
-Ejemplo de un script en Python que utiliza la API de OpenAI para procesar archivos de texto de transcripciones. Este script envía el contenido de un archivo de texto a la API de OpenAI, recibe la respuesta, y permite realizar un análisis interactivo posterior.
+Ejemplo de un script en Python que utiliza la API de OpenAI para procesar archivos de texto, por ejemplo, de transcripciones de audio. Este script envía el contenido de un archivo de texto a la API de OpenAI, recibe la respuesta, y permite realizar un análisis interactivo posterior.
 
 ### Paso 1: Instalar dependencias
 
