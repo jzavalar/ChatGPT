@@ -341,3 +341,21 @@ if __name__ == "__main__":
    Cuando se te solicite, introduce la ruta al archivo de texto que deseas analizar. El script leerá el archivo, contará el número de tokens y mostrará el resultado.
 
 Este script ahora está listo para que el usuario introduzca la ruta del archivo de texto que se desea procesar, y luego contará el número de tokens en ese archivo.
+
+#### Ejemplo de Salida
+
+```txt
+$ python ./contar_tokens.py 
+-----------------------------------------------------
+        Script para Contar Tokens en un Archivo       
+-----------------------------------------------------
+Este script cuenta el número de tokens en un archivo
+de texto utilizando la biblioteca tiktoken para los
+modelos de OpenAI.
+-----------------------------------------------------
+
+Por favor, introduce la ruta al archivo de texto: X230/Completados/Juan Gabriel – Siempre En Mi Mente_transcript.srt
+Leyendo el archivo: X230/Completados/Juan Gabriel – Siempre En Mi Mente_transcript.srt...
+Número de tokens en el archivo: 1560
+```
+
