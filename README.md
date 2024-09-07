@@ -1,4 +1,4 @@
-#  ChatGPT con DeepAI
+#  ChatGPT de DeepAI
 
 [DeepAI.org] es una plataforma dedicada a la inteligencia artificial y el aprendizaje automático que ofrece diversas herramientas y modelos pre-entrenados para realizar tareas de procesamiento del lenguaje natural (NLP), visión por computadora y muchos otros campos. Entre sus numerosas aplicaciones, uno de los productos más destacados es su solución de **ChatGPT**, un modelo de lenguaje que puede **interactuar de manera conversacional**, generando **texto coherente** y contextual de acuerdo a la entrada del usuario. Este tipo de tecnología tiene el **potencial** de revolucionar la forma en que las personas interactúan con las máquinas, facilitando la automatización de tareas, la generación de contenido, dependiendo del objetivo que se le use.
 
