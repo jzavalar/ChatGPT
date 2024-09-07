@@ -276,24 +276,68 @@ Si tus transcripciones superan estos límites de tokens:
 
 Para contar tokens en Python, puedes usar el paquete `tiktoken`, que es compatible con los modelos de OpenAI. Aquí tienes un ejemplo básico:
 
-```bash
-pip install tiktoken
-```
+Aquí tienes el script para que solicite al usuario la ruta del archivo a procesar y luego cuente el número de tokens en ese archivo.
 
 ```python
 import tiktoken
+import os
 
-# Crear un tokenizador para el modelo GPT-4
-tokenizer = tiktoken.get_encoding("cl100k_base")
+def contar_tokens(file_path):
+    """Cuenta el número de tokens en un archivo de texto."""
+    if not os.path.exists(file_path):
+        print(f"Error: El archivo '{file_path}' no existe.")
+        return None
+    
+    # Crear un tokenizador para el modelo GPT-4
+    tokenizer = tiktoken.get_encoding("cl100k_base")
 
-def contar_tokens(texto):
+    print(f"Leyendo el archivo: {file_path}...")
+    with open(file_path, 'r', encoding='utf-8') as file:
+        texto = file.read()
+
     tokens = tokenizer.encode(texto)
     return len(tokens)
 
-texto = "Tu texto aquí..."
-numero_de_tokens = contar_tokens(texto)
-print(f"Número de tokens: {numero_de_tokens}")
+def main():
+    print("-----------------------------------------------------")
+    print("        Script para Contar Tokens en un Archivo       ")
+    print("-----------------------------------------------------")
+    print("Este script cuenta el número de tokens en un archivo")
+    print("de texto utilizando la biblioteca tiktoken para los")
+    print("modelos de OpenAI.")
+    print("-----------------------------------------------------\n")
+    
+    # Solicitar al usuario la ruta del archivo de texto
+    archivo_transcripcion = input("Por favor, introduce la ruta al archivo de texto: ").strip()
+    
+    # Contar los tokens en el archivo
+    numero_de_tokens = contar_tokens(archivo_transcripcion)
+    
+    if numero_de_tokens is not None:
+        print(f"Número de tokens en el archivo: {numero_de_tokens}")
+
+if __name__ == "__main__":
+    main()
 ```
 
-Esta información debería ayudarte a manejar textos largos y asegurarte de que cumples con las limitaciones de tokens al utilizar la API de OpenAI.
+**Instrucciones para Ejecutar el Script**
 
+1. **Instalar `tiktoken`**:
+   Si aún no has instalado la biblioteca `tiktoken`, hazlo con:
+   ```bash
+   pip3 install tiktoken
+   ```
+
+2. **Guardar el Script**:
+   Guarda el script en un archivo, por ejemplo `contar_tokens.py`.
+
+3. **Ejecutar el Script**:
+   Abre una terminal, navega al directorio donde guardaste el script y ejecuta:
+   ```bash
+   python3 contar_tokens.py
+   ```
+
+4. **Introducir la Ruta del Archivo**:
+   Cuando se te solicite, introduce la ruta al archivo de texto que deseas analizar. El script leerá el archivo, contará el número de tokens y mostrará el resultado.
+
+Este script ahora está listo para que el usuario introduzca la ruta del archivo de texto que se desea procesar, y luego contará el número de tokens en ese archivo.
