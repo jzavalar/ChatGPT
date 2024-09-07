@@ -2,7 +2,7 @@
 
 [DeepAI.org] es una plataforma dedicada a la inteligencia artificial y el aprendizaje automático que ofrece diversas herramientas y modelos pre-entrenados para realizar tareas de procesamiento del lenguaje natural (NLP), visión por computadora y muchos otros campos. Entre sus numerosas aplicaciones, uno de los productos más destacados es su solución de **ChatGPT**, un modelo de lenguaje que puede **interactuar de manera conversacional**, generando **texto coherente** y contextual de acuerdo a la entrada del usuario. Este tipo de tecnología tiene el **potencial** de revolucionar la forma en que las personas interactúan con las máquinas, facilitando la automatización de tareas, la generación de contenido, dependiendo del objetivo que se le use.
 
-## API de DeepAI.org
+## API de DeepAI
 
 La **API** de [DeepAI.org] permite a los desarrolladores acceder fácilmente a los modelos de inteligencia artificial de la plataforma mediante programación. Esto significa que se pueden integrar capacidades avanzadas de IA en aplicaciones y servicios mediante simples solicitudes web o HTTP. 
 
@@ -26,7 +26,7 @@ Para utilizar la API de [DeepAI.org], se necesita:
 - **Dependencia del Servicio**: La funcionalidad y disponibilidad de la API dependen de la estabilidad de [DeepAI.org] y su rendimiento.
 - **Rate Limits**: Pueden existir limitaciones en la cantidad de solicitudes que se pueden realizar en un período determinado, lo que puede afectar aplicaciones en producción.
 
-## Alcance de su ChatGPT 
+## Alcance del ChatGPT de DeepAI 
 
 La URL `https://api.openai.com/v1/chat/completions` es un **endpoint** específico de la API de DeepAI que permite a los desarrolladores interactuar con modelos de chat como ChatGPT. Utilizando este endpoint, se pueden enviar mensajes como entradas de usuario y recibir respuestas generadas por el modelo, como se hace en la página web, pero desde otro entorno, ampliando su funcionalidad, por ejemplo, enviando archivos para su análisis. 
 
@@ -36,18 +36,18 @@ La URL `https://api.openai.com/v1/chat/completions` es un **endpoint** específi
 
 ## Script vs Aplicación Web
 
-### Script Básico
+### Script
 - **Funcionalidad Limitada**: Un script básico suele ser un código que realiza una tarea específica, como enviar un mensaje a la API y recibir una respuesta, sin una interfaz de usuario.
 - **Interactividad**: Carece de interactividad real, ya que la interacción con el usuario se limita a la línea de comandos.
 - **Uso Directo**: Ideal para pruebas rápidas o aplicaciones sencillas donde no se necesita procesamiento de múltiples entradas o una gestión de archivos compleja.
 
-### Aplicación Web Básica
+### Aplicación Web
 - **Interfaz de Usuario**: La aplicación web proporciona un formulario interactivo, lo que facilita a los usuarios enviar texto y archivos sin necesidad de conocimientos técnicos.
 - **Soporte de Archivos**: Permite a los usuarios cargar distintos tipos de archivos (texto, PDF, etc.) para procesamiento, enriqueciendo la interacción con el modelo.
 - **Gestión de Respuestas**: Maneja errores y notificaciones al usuario en tiempo real, mejorando la experiencia del usuario.
 - **Estructura Modular**: La configuración del proyecto permite una fácil expansión y mantenimiento, ideal para un desarrollo a largo plazo.
 
-### Uso de la API de DeepAI
+### Ejemplo Básiso
 
 Aprender a usar la API de DeepAI extiende el potencial de interacción. Usa esta guía básica para usar el [ChatGPT desde tu Computadora](https://github.com/jzavalar/deepai/blob/main/deepai_api.md), por ejemplo, enviando archivos como base para un análisis interactivo.  
 
