@@ -99,11 +99,201 @@ if __name__ == "__main__":
 3. **Verificación de la existencia del archivo**:
    - Se añade una verificación para asegurarse de que el archivo existe antes de intentar leerlo, informando al usuario si hay un problema.
 
-Este script ahora proporciona una experiencia más informativa, guiando al usuario a través de cada paso del proceso.
-
-### Consideraciones Adicionales
+**Consideraciones Adicionales**
 
    - *Dividir el texto*: Si las transcripciones son muy largas, podrías necesitar dividir el archivo en partes más pequeñas para procesarlas de manera efectiva, dado que la API tiene un límite de tokens por solicitud.
    - *Interacción posterior*: El script actual simplemente muestra el resultado en la consola, pero podrías adaptarlo para interactuar más con la API, hacer preguntas adicionales o analizar respuestas en diferentes partes de la transcripción.
 
 Con este script, podrás empezar a probar el procesamiento y análisis de tus transcripciones utilizando la API de OpenAI.
+
+
+## Ejecución del Script
+
+Este script proporciona una experiencia más informativa, guiando al usuario a través de cada paso del proceso en Fedora 39:
+
+### Prerrequisitos
+
+1. **Instalar Python**:
+   Fedora 39 debería venir con Python ya instalado, pero puedes verificarlo y, si es necesario, instalarlo o actualizarlo usando el siguiente comando:
+   ```bash
+   python3 --version
+   ```
+
+   Si Python no está instalado, puedes instalarlo con:
+   ```bash
+   sudo dnf install python3
+   ```
+
+2. **Instalar `pip`**:
+   `pip` es el gestor de paquetes de Python. Deberías tenerlo instalado con Python, pero si no es así, instálalo con:
+   ```bash
+   sudo dnf install python3-pip
+   ```
+
+3. **Instalar la biblioteca de OpenAI**:
+   Utiliza `pip` para instalar la biblioteca `openai`:
+   ```bash
+   pip3 install openai
+   ```
+
+### Obtener la API Key
+
+Para obtener tu API Key de OpenAI:
+
+1. **Regístrate en OpenAI**:
+   Si aún no tienes una cuenta, regístrate en [OpenAI](https://platform.openai.com/signup).
+
+2. **Accede al Dashboard**:
+   Una vez que hayas iniciado sesión, accede a tu [Dashboard de OpenAI](https://platform.openai.com/account/api-keys).
+
+3. **Genera una nueva API Key**:
+   Si no tienes una API Key, puedes crear una nueva desde el Dashboard. Copia la clave generada, ya que la necesitarás para el script.
+
+### Ejecutar el Script
+
+1. **Crear el archivo del script**:
+   Guarda el script proporcionado en un archivo, por ejemplo `analizar_transcripcion.py`.
+
+2. **Configurar el archivo del script**:
+   Abre el archivo en un editor de texto y reemplaza `'TU_API_KEY_AQUI'` con tu API Key de OpenAI. Guarda los cambios.
+
+3. **Preparar el archivo de transcripción**:
+   Asegúrate de que el archivo de texto que deseas analizar esté disponible en la ruta especificada en el script. Por ejemplo, si el archivo se llama `transcripcion.txt` y está en el mismo directorio que el script, asegúrate de que la ruta en el script sea `'transcripcion.txt'`.
+
+4. **Ejecutar el script**:
+   Abre una terminal y navega al directorio donde guardaste el archivo del script. Ejecuta el script con:
+   ```bash
+   python3 analizar_transcripcion.py
+   ```
+
+### Ejemplo de Ejecución
+
+Aquí tienes un resumen de los comandos en la terminal:
+
+```bash
+# Verificar la versión de Python
+python3 --version
+
+# Instalar pip si no está instalado
+sudo dnf install python3-pip
+
+# Instalar la biblioteca de OpenAI
+pip3 install openai
+
+# Ejecutar el script
+python3 analizar_transcripcion.py
+```
+
+Siguiendo estos pasos, deberías poder ejecutar el script y analizar tus transcripciones usando la API de OpenAI.
+
+### Caso de Uso: Análisis de la Transcripción de una Canción
+
+Para probar el script con el archivo de texto `"Juan Gabriel – Siempre En Mi Mente_transcript.srt"`, a continuación te proporciono un caso de uso detallado:
+
+#### 1. **Descripción del Escenario**
+Tienes un archivo de subtítulos con la transcripción de la canción "Siempre En Mi Mente" de Juan Gabriel en formato `.srt`. Deseas analizar esta transcripción usando el script para obtener un resumen o interpretación del contenido y poder realizar un análisis interactivo posterior.
+
+#### 2. **Preparación**
+
+- **Archivo de transcripción**: Asegúrate de que el archivo de subtítulos `"Juan Gabriel – Siempre En Mi Mente_transcript.srt"` esté disponible y ubicado en una ruta accesible desde donde ejecutarás el script.
+- **Ruta del archivo**: Por ejemplo, si el archivo está en el mismo directorio que el script, la ruta sería simplemente `"./Juan Gabriel – Siempre En Mi Mente_transcript.srt"`.
+
+#### 3. **Modificación del Script**
+
+Modificarás la línea en el script donde se define la ruta del archivo de transcripción:
+
+```python
+archivo_transcripcion = './Juan Gabriel – Siempre En Mi Mente_transcript.srt'
+```
+
+#### 4. **Ejecución del Script**
+
+1. **Ejecuta el script**: Asegúrate de que el script tenga la API Key configurada y que el archivo de transcripción esté en la ruta especificada.
+
+   ```bash
+   python analizar_transcripcion.py
+   ```
+
+2. **Salida Esperada**:
+   - El script mostrará un mensaje de bienvenida y luego leerá el archivo de transcripción.
+   - Enviará el contenido a la API de OpenAI.
+   - Finalmente, imprimirá en la consola el análisis realizado por la API, que podría incluir un resumen, interpretación o insights sobre la canción.
+
+#### 5. **Ejemplo de Salida**
+
+La salida en la consola podría ser algo como:
+
+```
+-----------------------------------------------------
+            Script de Análisis de Transcripción       
+-----------------------------------------------------
+Este script permite analizar transcripciones de audio
+mediante la API de OpenAI, facilitando un análisis 
+interactivo posterior. El objetivo es procesar grandes
+cantidades de texto y obtener respuestas útiles.
+-----------------------------------------------------
+
+Leyendo el archivo: ./Juan Gabriel – Siempre En Mi Mente_transcript.srt...
+Enviando el texto a la API de OpenAI para análisis...
+Análisis completado con éxito.
+
+Resultado del análisis:
+La canción "Siempre En Mi Mente" de Juan Gabriel expresa el profundo remordimiento y el deseo de reconciliación de una persona que teme haber perdido a un ser querido por no haberle demostrado suficiente amor y atención. El tema central gira en torno al arrepentimiento y la esperanza de que la otra persona aún conserve sentimientos a pesar de los errores cometidos. La repetición de la frase "siempre en mi mente" subraya la persistencia del amor y la preocupación constante, incluso en la ausencia física de la otra persona...
+```
+
+#### 6. **Consideraciones Adicionales**
+
+- **Formato de archivo `.srt`**: El script puede necesitar preprocesamiento si el archivo contiene marcas de tiempo que deben ser eliminadas antes de enviar el texto a la API. Si este es el caso, se puede agregar una función para limpiar las marcas de tiempo del archivo `.srt` antes de procesarlo.
+  
+- **División de texto**: Si la transcripción es muy larga, considera dividirla en partes para enviarlas por separado a la API y analizar cada parte por separado.
+
+Este caso de uso te permitirá probar el script de manera efectiva y verificar que el análisis del contenido de la transcripción funcione como esperado.
+
+### Tamaño Máximo de Tokens
+
+El tamaño máximo de texto que puedes enviar a la API de OpenAI no se mide en términos de tamaño de archivo, sino en términos de tokens. Los tokens son unidades de texto que pueden ser tan cortas como un solo carácter o tan largas como una sola palabra, dependiendo del idioma y el contenido, de acuerdo a las siguientes consideraciones:
+
+1. **Para GPT-3.5**:
+   - El límite es de 4,096 tokens por solicitud, incluyendo tanto la entrada (prompt) como la salida (respuesta).
+
+2. **Para GPT-4**:
+   - El límite puede variar según el modelo específico. Los modelos GPT-4 con más capacidad pueden manejar hasta 8,000 tokens o incluso 32,000 tokens en total (entrada + salida), pero estos límites pueden variar según el modelo y la configuración específica que elijas.
+
+### Manejo de Archivos Grandes
+
+Si tus transcripciones superan estos límites de tokens:
+
+1. **Dividir el Texto**:
+   - Tendrás que dividir el texto en partes más pequeñas que estén dentro del límite de tokens. Puedes hacerlo manualmente o mediante un script que divida el texto en fragmentos adecuados.
+
+2. **Procesar en Partes**:
+   - Envía cada fragmento a la API por separado y luego combina los resultados según sea necesario.
+
+3. **Contar Tokens**:
+   - Usa una herramienta o biblioteca para contar los tokens en tu texto antes de enviarlo a la API. OpenAI proporciona herramientas para estimar el número de tokens.
+
+#### Contar Tokens
+
+Para contar tokens en Python, puedes usar el paquete `tiktoken`, que es compatible con los modelos de OpenAI. Aquí tienes un ejemplo básico:
+
+```bash
+pip install tiktoken
+```
+
+```python
+import tiktoken
+
+# Crear un tokenizador para el modelo GPT-4
+tokenizer = tiktoken.get_encoding("cl100k_base")
+
+def contar_tokens(texto):
+    tokens = tokenizer.encode(texto)
+    return len(tokens)
+
+texto = "Tu texto aquí..."
+numero_de_tokens = contar_tokens(texto)
+print(f"Número de tokens: {numero_de_tokens}")
+```
+
+Esta información debería ayudarte a manejar textos largos y asegurarte de que cumples con las limitaciones de tokens al utilizar la API de OpenAI.
+
