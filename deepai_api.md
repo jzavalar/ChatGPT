@@ -1,4 +1,4 @@
-# ChatGPT de DeepAI mediante su API
+# ChatGPT desde su Computadora
 
 ## Receta General
 
